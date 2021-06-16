@@ -1,5 +1,14 @@
 asgiref==3.3.4
+dj-database-url==0.5.0
+dj-email-url==1.0.2
 Django==3.2.4
+django-cache-url==3.2.3
 django-crispy-forms==1.11.2
+environs==9.3.2
+marshmallow==3.12.1
+pkg-resources==0.0.0
+psycopg2-binary==2.8.6
+python-dotenv==0.17.1
 pytz==2021.1
 sqlparse==0.4.1
+typing-extensions==3.10.0.0
