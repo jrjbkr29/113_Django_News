@@ -4,18 +4,16 @@
 
 {% block content %}
 
-<div id="list-example" class="list-group">
-    {% for article in object_list %}
-    <a class="list-group-item list-group-item-action" href="#{{ article.title }}">{{ article.title }}</a>
-    {% endfor %}
-</div>
+
 <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
     {% for article in object_list %}
+    <div class="card-dark">
     <h4 id="{{ article.title }}">{{ article.title }}</h4>
     <p>{{ article.body }}</p>
     <div class="card-footer text-center text-muted">
         <a href="{% url 'article_edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>
     </div>
+        <h5>Comments</h5>
         {% for comment in article.comments.all %}
         <p>
             <span class="font-weight-bold">
@@ -25,6 +23,8 @@
         </p>
         {% endfor comment %}
     <br>
+    <br>
     {% endfor %}
+</div>
 </div>
 {% endblock content %}
