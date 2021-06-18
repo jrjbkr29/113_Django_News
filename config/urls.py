@@ -23,3 +23,4 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('articles/', include('articles.urls')),
 ]
+
