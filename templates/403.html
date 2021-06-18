@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}Link doesnt Exist{% endblock title %}
+{% block title %}Denied{% endblock title %}
 {% block content %}
-    <h2>Not Found!</h2>
-    <p>You're probably in the wrong place.</p>
+    <h2>Permission Denied!</h2>
+    <p>Only the owner or administrator can modify this article.</p>
     <p>Click <a href="{% url 'articles_list' %}">here</a> to go back</p>
 {% endblock content %}

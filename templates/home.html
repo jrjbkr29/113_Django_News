@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock title %}
 
@@ -13,11 +14,12 @@
     {% endif %}
     <br />
 <div class="jumbotron">
-    <h1 class="display-4">Newspaper App</h1>
-    <p class="lead">A newspaper website buillt with Django.</p>
+    <h1 class="display-4">Company News</h1>
+    <p class="lead">Company updates, announcements, and events.</p>
     <p class="lead">
-        <a class="btn btn-primary btn-lg" href="{% url 'article_list' %} role="button">View All Articles</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}" role="button">View Articles</a>
     </p>
+    <img style="width:75vw;height: 50vh;" src="{% static 'images/news_bg_home.jpg' %}" alt="News Image">
 
 </div>
 {% endblock content %}
