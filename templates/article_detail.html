@@ -3,7 +3,7 @@
 {% block title %}Article Detail{% endblock title %}
 
 {% block content %}
-    <div class="card">
+    <div class="card-dark">
         <div class="card-header">
             <span class="font-weight-bold">
                 {{ article.title }}
@@ -14,8 +14,18 @@
             {{ article.body }}
         </div>
     </div>
-    <div class="card-footer text-center text-muted">
-        <a href="{% url 'article_edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>  | <a href="{{ article_list }}">Back to Articles</a>
+    <div class="card-footer text-center text-white">
+        <a class="text-white" href="{% url 'article_edit' article.pk %}">Edit</a> | <a class="text-white" href="{% url 'article_delete' article.pk %}">Delete</a>  | <a class="text-white" href="{% url 'article_list' %}">Back to Articles</a>
     </div>
+    <h5>Comments</h5>
+    <a href="{% url 'comment_new' %}"><h6>+ Add Comment</h6></a>
+        {% for comment in article.comments.all %}
+        <p>
+            <span class="font-weight-bold">
+                {{  comment.author  }} &middot;
+            </span>
+            {{ comment }}
+        </p>
+        {% endfor comment %}
 
 {% endblock content %}

@@ -11,17 +11,9 @@
     <h4 id="{{ article.title }}">{{ article.title }}</h4>
     <p>{{ article.body }}</p>
     <div class="card-footer text-center text-muted">
-        <a href="{% url 'article_edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>
+        <a href="{% url 'article_detail' article.pk %}">View</a> | <a href="{% url 'article_edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>
     </div>
-        <h5>Comments</h5>
-        {% for comment in article.comments.all %}
-        <p>
-            <span class="font-weight-bold">
-                {{  comment.author  }} &middot;
-            </span>
-            {{ comment }}
-        </p>
-        {% endfor comment %}
+    <a href="{% url 'article_detail' article.pk %}"><h5>Comments {{ article.comments.all|length }}</h5></a>
     <br>
     <br>
     {% endfor %}
